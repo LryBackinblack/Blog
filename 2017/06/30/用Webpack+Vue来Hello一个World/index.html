@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="用Webpack+Vue来Hello一个World"><meta name="keywords" content="前端,笔记,webpack,vue"><meta name="author" content="Ryan,550412949@qq.com"><meta name="copyright" content="Ryan"><title>用Webpack+Vue来Hello一个World | Ryan的博客</title><link rel="shortcut icon" href="/blog/favicon.ico"><link rel="stylesheet" href="/Blog/css/index.css"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.5.0"><script>var GLOBAL = { 
+  root: '/blog/',
+  algolia: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  localSearch: undefined
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#用Webpack-Vue来Hello一个World"><span class="toc-number">1.</span> <span class="toc-text">用Webpack+Vue来Hello一个World</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目目录结构"><span class="toc-number">2.</span> <span class="toc-text">项目目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Webpack的安装"><span class="toc-number">3.</span> <span class="toc-text">Webpack的安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开始打包你的js文件"><span class="toc-number">4.</span> <span class="toc-text">开始打包你的js文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#难道只能打包JS文件？"><span class="toc-number">5.</span> <span class="toc-text">难道只能打包JS文件？</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/blog/img/avatar.png"></div><div class="author-info__name text-center">Ryan</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/blog/archives"><span class="pull-left">文章</span><span class="pull-right">3</span></a><a class="author-info-articles__tags article-meta" href="/blog/tags"><span class="pull-left">标签</span><span class="pull-right">4</span></a><a class="author-info-articles__categories article-meta" href="/blog/categories"><span class="pull-left">分类</span><span class="pull-right">1</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container" style="background-image: url(true)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Ryan的博客</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/Blog/">主页</a><a class="site-page" href="/Blog/archives">归档</a><a class="site-page" href="/Blog/tags">标签</a><a class="site-page" href="/Blog/categories">分类</a></span></div><div id="post-info"><div id="post-title">用Webpack+Vue来Hello一个World</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2017-06-30</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/blog/categories/”笔记“/">”笔记“</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div id="post-content"><h3 id="用Webpack-Vue来Hello一个World"><a href="#用Webpack-Vue来Hello一个World" class="headerlink" title="用Webpack+Vue来Hello一个World"></a>用Webpack+Vue来Hello一个World</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack 是一个现代 JavaScript 应用程序的模块打包器(module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成少量的 bundle - 通常只有一个，由浏览器加载。</span><br></pre></td></tr></table></figure>
+<h3 id="项目目录结构"><a href="#项目目录结构" class="headerlink" title="项目目录结构"></a>项目目录结构</h3><ul>
+<li>LreanWebpack<ul>
+<li>src<ul>
+<li>component<ul>
+<li>images //存放图片</li>
+<li>public //公共组件<ul>
+<li>style.css</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>app.vue</li>
+</ul>
+</li>
+<li>config //webpack配置文件<ul>
+<li>webpack.config.base.js</li>
+<li>webpack.config.dev.js</li>
+</ul>
+</li>
+<li>node_modules //npm下载的模块</li>
+<li>entry.js //入口</li>
+<li>index.html //主页</li>
+<li>package.json //包管理</li>
+<li>package-lock.json</li>
+</ul>
+</li>
+</ul>
+<h3 id="Webpack的安装"><a href="#Webpack的安装" class="headerlink" title="Webpack的安装"></a>Webpack的安装</h3><p>npm install 包名 –save<br>​npm install 包名 –save-dev</p>
+<a id="more"></a>
+<p>​</p>
+<p>​ 两者区别：<br> –save-dev：自动将模块和版本号添加至devDependencies，devDependencies为项目开发中所使用的环境</p>
+<p>​ –save，自动将模块和版本号添加至dependencies，dependencies项目正常运行所需环境。</p>
+<p>​ 扩展：npm install –production安装devDependencies中的模块</p>
+<p>​ npm install 安装devDependencies、dependencies中的模块</p>
+<p>编写Webpack配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    entry:&apos;入口文件&apos;,</span><br><span class="line">    output:&#123;</span><br><span class="line">        filename: [输出文件名.js],</span><br><span class="line">        path: [输出至目录],</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以上代码是使用Webpack最基础的配置，上面写明了程序的入口文件，以及打包后的文件名及打包至哪个目录。</p>
+<h3 id="开始打包你的js文件"><a href="#开始打包你的js文件" class="headerlink" title="开始打包你的js文件"></a>开始打包你的js文件</h3><p>假设你的已经写好了所需的js代码，接下来需要将文件打包。<br>则可以使用<br>webpack –config [配置文件路径] [输出目录]。<br>每次都需要输出一串命令来打包文件，无疑十分麻烦。幸好npm允许在package.json里面自定义脚本命令，打开package.json文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;LreanWebpack&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;,</span><br><span class="line">  &quot;keywords&quot;: [],</span><br><span class="line">  &quot;author&quot;: &quot;&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;ISC&quot;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;</span><br><span class="line">    ……</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    ……</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;build&quot;: &quot;webpack --config ./config/webpack.config.base.js&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>即可使用npm build – 参数 等同于 webpack –config ./config/webpack.config.base.js” 参数</p>
+<p>该操作适用场景很广，后续为项目添加dev-server时也可使用scripts来简化开发流程。</p>
+<p>怎么使用打包后的文件<br>安装好webpack、编写好js文件、执行了打包命令。该如何使用打包好的文件？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Lrean webpack&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script src=&quot;[输出目录]/[输出文件名].js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>使用script标签引用在webpack配置文件中编写好的 [输出目录]以及[输出文件名].js,即可使用打包后的代码。</p>
+<h3 id="难道只能打包JS文件？"><a href="#难道只能打包JS文件？" class="headerlink" title="难道只能打包JS文件？"></a>难道只能打包JS文件？</h3><p>webpack将图片、css文件、js、html等文件都作为资源处理。处理不同文件的时候，webpack使用不同的loader对文件进行。</p>
+<p>在正常的项目中肯定会使用到js、css、图片等资源，我们这次的练习还使用了vue，以及ES6。那么webpack如何处理这些文件？<br>webpack在处理相关文件的时候，需要先通过npm安装对应文件的loader，如css-loader、url-loader、vue-loader使用ES6则需要安装babel-loader与babel-core。<br>如何安装模块在webpack的安装中已经提过了，这里不在赘述。重要的是如何配置这些loader，打开我们之前编写的webpack.config.js文件。可以看到其中只有entry和ouput，配置loader则需要新增加一个module。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    entry:&apos;入口文件&apos;,</span><br><span class="line">    output:&#123;</span><br><span class="line">        filename: [输出文件名.js],</span><br><span class="line">        path: [输出至目录],</span><br><span class="line">    &#125;,</span><br><span class="line">    module：[&#123;</span><br><span class="line">          test：/[正则]/,   //用于匹配文件</span><br><span class="line">          loader:&quot;[loader]&quot; //文件使用的loader</span><br><span class="line">    &#125;,&#123;</span><br><span class="line">          test：/\.css$/,   //用于匹配文件</span><br><span class="line">          loader:&quot;style-loader!css-loader&quot; //文件使用的loader</span><br><span class="line">    &#125;]                                  //补充，loader！loader的写法意思是从右往左解析，css-loader会遍历css文件</span><br><span class="line">&#125;                                         //找到所有的url(...)并且处理。style-loader会把所有的样式插入到你页面的一个style</span><br></pre></td></tr></table></figure></p>
+<p>再在入口文件或者需要使用的场景中引入资源文件即可使用。</p>
+<ul>
+<li>LreanWebpack<ul>
+<li>src<ul>
+<li>component<ul>
+<li>images //存放图片</li>
+<li>public //公共组件<ul>
+<li>style.css</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>app.vue<ul>
+<li>config //webpack配置文件<ul>
+<li>webpack.config.base.js</li>
+<li>webpack.config.dev.js</li>
+</ul>
+</li>
+<li>node_modules //npm下载的模块</li>
+<li>entry.js //入口</li>
+<li>index.html //主页</li>
+<li>package.json //包管理</li>
+<li>package-lock.json<br>以项目中的style.css文件为例。开发者只需要在入口文件entry.js中<br>require(“./src/component/public/style.css”);<br>即可使用。</li>
+</ul>
+</li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:550412949@qq.com">Ryan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://lrybackinblack.github.io/Blog/2017/06/30/用Webpack+Vue来Hello一个World/">https://lrybackinblack.github.io/Blog/2017/06/30/用Webpack+Vue来Hello一个World/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://lrybackinblack.github.io/Blog/" target="_blank">Ryan</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/前端/">前端</a><a class="post-meta__tags" href="/blog/tags/笔记/">笔记</a><a class="post-meta__tags" href="/blog/tags/webpack/">webpack</a><a class="post-meta__tags" href="/blog/tags/vue/">vue</a></div><nav id="pagination"><div class="next-post pull-right"><a href="/blog/2017/03/28/《Web前端开发最佳实践》笔记/"><span>《Web前端开发最佳实践》笔记</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2018 By Ryan</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/Blog/js/third-party/anime.min.js"></script><script src="/Blog/js/third-party/jquery.min.js"></script><script src="/Blog/js/third-party/jquery.fancybox.min.js"></script><script src="/Blog/js/third-party/velocity.min.js"></script><script src="/Blog/js/third-party/velocity.ui.min.js"></script><script src="/Blog/js/utils.js?version=1.5.0"></script><script src="/Blog/js/fancybox.js?version=1.5.0"></script><script src="/Blog/js/sidebar.js?version=1.5.0"></script><script src="/Blog/js/copy.js?version=1.5.0"></script><script src="/Blog/js/fireworks.js?version=1.5.0"></script><script src="/Blog/js/transition.js?version=1.5.0"></script><script src="/Blog/js/scroll.js?version=1.5.0"></script><script src="/Blog/js/head.js?version=1.5.0"></script></body></html>
